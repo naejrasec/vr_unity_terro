@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class player_walk : MonoBehaviour
 {
+    public int  playerSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class player_walk : MonoBehaviour
         if (Input.GetButton("Fire1")){
 
         
-        transform.position = transform.position + Camera.main.transform.forward ;
+        transform.position = transform.position + Camera.main.transform.forward * Time.deltaTime * playerSpeed;
         }
     }
 }
